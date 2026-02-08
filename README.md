@@ -20,6 +20,15 @@ zutui
 ```
 ### 3. Enjoy :)
 
+# Bindings
+`j` - Down
+
+`k` - Up
+
+`enter` - See partial grades info
+
+`ctrl`+`q` - Quit
+
 # Sidenotes
 - config is stored @ `~/zutui/config.json`
 - so are `grades_cache.json`
