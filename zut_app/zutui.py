@@ -1,7 +1,5 @@
-
 import json
 import os
-import time
 from datetime import datetime
 from textual.app import App, ComposeResult
 from textual.containers import Container
@@ -10,11 +8,9 @@ from textual.screen import Screen
 from textual.binding import Binding
 
 from .zut_client import ZUT
+from .config import get_config_path
 
-USER_HOME = os.path.expanduser("~")
-APP_DIR = os.path.join(USER_HOME, "zutui")
-if not os.path.exists(APP_DIR):
-    os.makedirs(APP_DIR)
+APP_DIR = get_config_path()
 
 CONFIG_FILE = os.path.join(APP_DIR, "config.json")
 REFRESH_INTERVAL = 1800

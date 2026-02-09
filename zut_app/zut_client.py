@@ -1,16 +1,14 @@
-
 import requests
 from bs4 import BeautifulSoup
 import json
 import os
 
-USER_HOME = os.path.expanduser("~")
-APP_DIR = os.path.join(USER_HOME, "zutui")
-if not os.path.exists(APP_DIR):
-    os.makedirs(APP_DIR)
+from .config import get_config_path
+
+APP_DIR = get_config_path()
 
 CACHE_FILE = os.path.join(APP_DIR, "grades_cache.json")
-TIMEOUT = 10 
+TIMEOUT = 10
 
 class ZUT:
     URLS = {
