@@ -30,17 +30,12 @@ zutui
 `ctrl`+`q` - Quit
 
 # Sidenotes
-- config is stored @ `~/zutui/config.json`
+## Config
+- On Unix like is stored @ `~/.config/zutui/config.json`
+- On Windows is stored @ `~/zutui/config.json`
 - so are `grades_cache.json`
-- in plaintext.....
 
-##### As of right now I don't see any MUCH better way.
-
-##### I mean we could simply encrypt and decrypt it during runtime, but... does it really make it any more secure?
-
-##### And we can't really store it in any form of a _hash_ as we have to log in everytime with plain text anyways...
-
-##### However feel free to pull request if you're smarter :)
+##### Feel free to pull request if you're smarter :)
 
 # TODO:
 - [x] **Nothing**
