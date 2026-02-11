@@ -8,6 +8,7 @@ setup(
         "requests",
         "beautifulsoup4",
         "textual",
+        "keyring"
     ],
     entry_points={
         'console_scripts': [
