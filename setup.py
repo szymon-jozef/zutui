@@ -8,6 +8,8 @@ setup(
         "requests",
         "beautifulsoup4",
         "textual",
+        "keyring",
+        "pywin32"
     ],
     entry_points={
         'console_scripts': [

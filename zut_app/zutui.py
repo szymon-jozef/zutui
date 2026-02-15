@@ -1,5 +1,7 @@
 import json
 import os
+import keyring
+from keyring.errors import KeyringError
 from datetime import datetime
 from textual.app import App, ComposeResult
 from textual.containers import Container
@@ -54,9 +56,20 @@ class LoginScreen(Screen):
             if success:
                 try:
                     with open(CONFIG_FILE, "w") as f:
-                        json.dump({"username": user, "password": password}, f)
+                        json.dump({"username": user}, f)
+                        keyring.set_password("zutui", user, password)
+                except KeyringError as e:
+                    error = e
+                    self.app.call_from_thread(
+                            lambda:
+                                self.app.notify(
+                                    f"Błąd: {str(error)}",
+                                    title="Błąd zapisu hasła do systemowego menedżera haseł",
+                                    severity="warning",
+                                    timeout=5
+                                    )
+                            )
                 except: pass
-                
                 def do_switch():
                     self.app.switch_screen(DashboardScreen())
                 self.app.call_from_thread(do_switch)
@@ -406,7 +419,10 @@ class ZutApp(App):
             try:
                 with open(CONFIG_FILE, "r") as f:
                     creds = json.load(f)
-                    self.zut_client = ZUT(creds["username"], creds["password"])
+                    password = keyring.get_password("zutui", creds["username"])
+                    if password is None:
+                        raise ValueError("Hasło nie zostało znalezione")
+                    self.zut_client = ZUT(creds["username"], password)
                     self.push_screen(DashboardScreen())
             except:
                 self.push_screen(LoginScreen())
