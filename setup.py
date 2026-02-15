@@ -9,7 +9,7 @@ setup(
         "beautifulsoup4",
         "textual",
         "keyring",
-        "pywin32"
+        "pywin32; sys_platform == 'win32'"
     ],
     entry_points={
         'console_scripts': [
