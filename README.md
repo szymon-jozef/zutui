@@ -10,15 +10,31 @@
 <img width="100%" height="auto" alt="Grades Page" src="https://github.com/user-attachments/assets/6536c74d-13a5-436e-af3d-5522216ce8c1" />
 
 # Usage
-### 1. Download:
+## 1. Download:
+### On Windows:
 ```
 pip install git+https://github.com/shv187/zutui.git
 ```
-### 2. Start:
+### Arch Linux:
+You can use PKGBUILD. Just run:
+```bash
+makepkg -si
+```
+or if you want to, you can use AUR helper of your choice. For example:
+```bash
+yay -S zutui-git
+```
+### MacOs and other Linux distros:
+Most distros environments are externally managed by the system package manager, so the most straightforward way would be using something like `pipx`.
+```bash
+pipx install git+https://github.com/shv187/zutui.git
+```
+
+## 2. Start:
 ```
 zutui
 ```
-### 3. Enjoy :)
+## 3. Enjoy :)
 
 # Bindings
 `j` - Down
