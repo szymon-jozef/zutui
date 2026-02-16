@@ -20,6 +20,10 @@ You can use PKGBUILD. Just run:
 ```bash
 makepkg -si
 ```
+or if you want to, you can use AUR helper of your choice. For example:
+```bash
+yay -S zutui-git
+```
 ### MacOs and other Linux distros:
 Most distros environments are externally managed by the system package manager, so the most straightforward way would be using something like `pipx`.
 ```bash
