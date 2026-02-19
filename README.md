@@ -24,6 +24,11 @@ or if you want to, you can use AUR helper of your choice. For example:
 ```bash
 yay -S zutui-git
 ```
+### Nix:
+```bash
+nix profile install github:shv187/zutui
+```
+
 ### MacOs and other Linux distros:
 Most distros environments are externally managed by the system package manager, so the most straightforward way would be using something like `pipx`.
 ```bash
