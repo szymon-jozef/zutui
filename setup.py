@@ -9,7 +9,7 @@ setup(
         "beautifulsoup4",
         "textual",
         "keyring",
-        "pywin32; sys_platform == 'win32'"
+        "pywin32; sys_platform == 'win32'",
         "appdirs",
     ],
     entry_points={
