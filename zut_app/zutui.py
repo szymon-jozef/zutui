@@ -3,6 +3,7 @@ import os
 import keyring
 from keyring.errors import KeyringError
 from datetime import datetime
+from appdirs import user_config_dir
 from textual.app import App, ComposeResult
 from textual.containers import Container
 from textual.widgets import Header, Footer, DataTable, Label, Button, Input
@@ -10,9 +11,8 @@ from textual.screen import Screen
 from textual.binding import Binding
 
 from .zut_client import ZUT
-from .config import get_config_path
 
-APP_DIR = get_config_path()
+APP_DIR = user_config_dir("zutui", "shv187")
 
 CONFIG_FILE = os.path.join(APP_DIR, "config.json")
 REFRESH_INTERVAL = 1800

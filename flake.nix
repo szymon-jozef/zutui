@@ -36,6 +36,7 @@
               textual
               requests
               beautifulsoup4
+              appdirs
             ];
 
             meta = with pkgs.lib; {
@@ -46,6 +47,14 @@
             };
           };
         };
+
+        devShells = {
+          default = pkgs.mkShell {
+            inputsFrom = [ self.packages.${system}.default ];
+          };
+        };
       }
+
     );
+
 }

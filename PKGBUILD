@@ -1,13 +1,13 @@
 # Maintainer: <szymon_jozef@proton.me>
 _pkgname="zutui"
 pkgname="$_pkgname-git"
-pkgver=1.0.0
-pkgrel=1
+pkgver="1.0.0.r8.ceefa47"
+pkgrel=4
 pkgdesc="TUI for accessing edziekanat of ZUT university"
 arch=("any")
 url="https://github.com/shv187/zutui"
 license=("MIT")
-depends=("python" "python-keyring" "python-textual")
+depends=("python" "python-keyring" "python-textual" "python-appdirs" "python-beautifulsoup4" "python-requests")
 makedepends=("git" "python-build" "python-installer" "python-wheel" "python-setuptools")
 provides=("zutui")
 conflicts=("zutui")
@@ -16,7 +16,7 @@ sha256sums=("SKIP")
 
 pkgver() {
     cd "$_pkgname"
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+    printf "1.0.0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {

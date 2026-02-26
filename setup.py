@@ -10,6 +10,7 @@ setup(
         "textual",
         "keyring",
         "pywin32; sys_platform == 'win32'"
+        "appdirs",
     ],
     entry_points={
         'console_scripts': [

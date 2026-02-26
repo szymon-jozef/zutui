@@ -1,13 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+from appdirs import user_config_dir, user_cache_dir
 import os
 
-from .config import get_config_path
+app_name = "zutui"
+app_author = "shv187"
 
-APP_DIR = get_config_path()
+CONFIG_DIR = user_config_dir(app_name, app_author)
+CACHE_DIR = user_cache_dir(app_name, app_author)
+os.makedirs(CACHE_DIR, exist_ok=True)
+os.makedirs(CONFIG_DIR, exist_ok=True)
 
-CACHE_FILE = os.path.join(APP_DIR, "grades_cache.json")
+CACHE_FILE = os.path.join(CACHE_DIR, "grades_cache.json")
 TIMEOUT = 10
 
 class ZUT:
